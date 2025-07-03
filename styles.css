@@ -16,53 +16,68 @@ body {
   justify-content: center;
 }
 
-/* Container */
+/* Container for main content */
 .container {
   display: flex;
-  max-width: 1100px;
-  width: 95%;
+  max-width: 1400px;         /* Increased max width for larger screens */
+  width: 98%;                /* Slightly wider on desktop */
   background-color: #002147;
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 3rem 3rem;        /* More padding for breathing room */
+  border-radius: 16px;       /* Slightly more rounded */
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;                 /* More space between left and right */
+  box-sizing: border-box;
 }
 
 /* Left Section */
 .left-content {
-  flex: 1;
-  min-width: 300px;
+  flex: 1.2;                 /* Give more space to text section */
+  min-width: 350px;
 }
 
+/* Logo styling for header */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;       /* More space below logo */
+}
 .logo img {
-  width: 180px;
+  width: 240px;              /* Larger logo */
+  max-width: 100%;
+  height: auto;
   background-color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  margin-bottom: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
 
+/* Headline styling - Make it stand out */
 .left-content h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #f7f7f7;
-  font-weight: bold;
+  font-size: 3.2rem;         /* Much larger headline */
+  margin-bottom: 1.5rem;
+  color: #ffc107;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.16);
+  line-height: 1.15;
 }
 
+/* Paragraph styling */
 .left-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1.35rem;        /* Larger supporting text */
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
   color: #e0e0e0;
 }
 
-/* Buttons */
+/* Buttons container */
 .buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
+/* General button styling */
 .btn {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
@@ -72,28 +87,71 @@ body {
   transition: background 0.3s ease;
 }
 
+/* Primary button style (not used here, but kept for reference) */
 .btn.primary {
   background-color: white;
   color: #002147;
 }
-
 .btn.primary:hover {
   background-color: #f1f1f1;
 }
 
+/* Donate button style */
 .btn.donate {
   background-color: #ffc107;
   color: #002147;
 }
-
 .btn.donate:hover {
   background-color: #e6ac00;
 }
 
-/* Right Image */
+/* Call-to-action group - More contrast and spacing */
+.action-group {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: fit-content;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  margin-top: 2.5rem;
+  border: 2.5px solid #ffc107;
+}
+
+/* Style Take Action as plain bold text, not a button */
+.take-action-text {
+  color: #002147;
+  font-weight: 900;
+  font-size: 1.5rem;         /* Larger CTA text */
+  letter-spacing: 0.7px;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Only Donate remains styled as a button */
+.action-group .btn.donate {
+  margin-left: 0.7rem;
+  background-color: #ffc107;
+  color: #002147;
+  font-size: 1.25rem;        /* Larger button text */
+  font-weight: bold;
+  padding: 1rem 2.5rem;      /* Larger button */
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.action-group .btn.donate:hover {
+  background-color: #e6ac00;
+  transform: translateY(-2px) scale(1.06);
+}
+
+/* Right Image Section */
 .right-image {
-  flex: 1;
-  min-width: 300px;
+  flex: 1.1;
+  min-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +159,128 @@ body {
 
 .right-image img {
   width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
+  max-width: 600px;          /* Larger image on desktop */
+  height: auto;
+  border-radius: 28px;
   object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+/* Enhance modal with transition and scale effect */
+.modal {
+  transition: transform 0.35s cubic-bezier(.23,1.01,.32,1), opacity 0.35s;
+  transform: scale(0.92);
+  opacity: 0;
+}
+.modal.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Button hover and active effects */
+.btn,
+.submit-btn {
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover,
+.submit-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+.btn:active,
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Logo and right image subtle hover effect */
+.logo img,
+.right-image img {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.logo img:hover,
+.right-image img:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transform: scale(1.03) rotate(-1deg);
+}
+
+/* Responsive adjustments for tablets and below */
+@media (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    max-width: 98vw;
+  }
+  .right-image, .left-content {
+    min-width: 0;
+    width: 100%;
+  }
+  .right-image img {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  .logo img {
+    width: 180px;
+  }
+  .left-content h1 {
+    font-size: 2.1rem;
+  }
+  .left-content p {
+    font-size: 1.1rem;
+  }
+  .take-action-text {
+    font-size: 1.1rem;
+  }
+  .action-group .btn.donate {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+    border-radius: 8px;
+    gap: 1.2rem;
+  }
+  .logo img {
+    width: 120px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 18px;
+  }
+  .left-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+  .left-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  .action-group {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.7rem 1rem;
+    gap: 0.7rem;
+    border-radius: 12px;
+  }
+  .take-action-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .action-group .btn.donate {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+  }
+  .right-image img {
+    max-width: 100%;
+    border-radius: 14px;
+    margin-top: 1rem;
+  }
+  .modal {
+    min-width: 90vw;
+    padding: 1rem 0.5rem;
+  }
 }
