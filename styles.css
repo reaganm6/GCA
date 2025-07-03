@@ -1,0 +1,107 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #002147; /* Deep navy */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  display: flex;
+  max-width: 1100px;
+  width: 95%;
+  background-color: #002147;
+  padding: 2rem;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Left Section */
+.left-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.logo img {
+  width: 180px;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  margin-bottom: 1.5rem;
+}
+
+.left-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f7f7f7;
+  font-weight: bold;
+}
+
+.left-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn.primary {
+  background-color: white;
+  color: #002147;
+}
+
+.btn.primary:hover {
+  background-color: #f1f1f1;
+}
+
+.btn.donate {
+  background-color: #ffc107;
+  color: #002147;
+}
+
+.btn.donate:hover {
+  background-color: #e6ac00;
+}
+
+/* Right Image */
+.right-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  object-fit: cover;
+}
